@@ -27,3 +27,7 @@
     height: 24px;
     width: 24px;
 }
+
+.gx-item-nowrap .x-box-item {
+    white-space: nowrap;
+}
