@@ -45,7 +45,6 @@ function showPrintWindow() {
         resizable: false,
         width: 360,
         items: new GeoExt.ux.PrintPreview({
-            bodyStyle: "padding:5px",
             printProvider: {
                 // using get for remote service access without same origin
                 // restriction. For async requests, we would set method to "POST".
