@@ -2,6 +2,10 @@
     background-image: url(../images/silk/printer.png);
 }
 
+.gx-printpreview {
+    padding: 5px 0 5px 0;
+}
+
 .gx-map-overlay {
     z-index: 1000; 
     position: absolute; 
