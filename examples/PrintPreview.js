@@ -54,7 +54,8 @@ function showPrintWindow() {
                 // capabilities from script tag in Printing.html.
                 capabilities: printCapabilities,
                 listeners: {
-                    "print": function() {printWindow.close();}
+                    "print": function() {printWindow.close();},
+                    "printexception": function() {printWindow.close();}
                 }
             },
             includeLegend: true,
