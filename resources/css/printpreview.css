@@ -3,7 +3,7 @@
 }
 
 .gx-printpreview {
-    padding: 5px 0 5px 0;
+    padding: 5px;
 }
 
 /* fixes textarea scrollbar issue in FF on OSX */
