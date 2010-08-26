@@ -58,10 +58,11 @@
             t.ok(printPreview.printProvider, "PrintProvider taken from printMapPanel config.");
             t.ok(printPreview.sourceMap, "sourceMap taken from printMapPanel config.");
             
-            t.eq(printPreview.items.getCount(), 2, "PrintPreview has two items,");
-            t.ok(printPreview.items.get(0) instanceof Ext.form.FormPanel, "a FormPanel");
-            t.ok(printPreview.items.get(1) instanceof GeoExt.PrintMapPanel, "and a PrintMapPanel,");
-            t.eq(printPreview.items.get(0).getWidth(), printPreview.items.get(1).getWidth(), "with the form having the same width as the map.");
+            var content = printPreview.items.get(1);
+            t.eq(content.items.getCount(), 2, "PrintPreview content has two items,");
+            t.eq(content.items.get(0).getXType(), "form", "a FormPanel");
+            t.eq(content.items.get(1).getXType(), "gx_printmappanel", "and a PrintMapPanel,");
+            t.eq(content.items.get(0).getWidth(), printPreview.items.get(1).getWidth(), "with the form having the same width as the map.");
             
             printPreview.destroy();
             mapPanel.destroy();
@@ -88,7 +89,7 @@
                 },
                 sourceMap: mapPanel
             });
-            t.eq(printPreview.items.get(0).items.get(0).getXType(), "textfield", "textfield line created correctly without legend checkbox.");
+            t.eq(printPreview.items.get(1).items.get(0).items.get(0).getXType(), "textfield", "textfield line created correctly without legend checkbox.");
             printPreview.destroy();
 
             var printPreview = new GeoExt.ux.PrintPreview({
@@ -100,8 +101,8 @@
                 legend: "fake_legend",
                 includeLegend: true
             });
-            t.eq(printPreview.items.get(0).items.get(0).getXType(), "container", "textfield line created correctly with legend checkbox.");
-            t.eq(printPreview.items.get(0).items.get(0).items.get(1).items.get(0).getValue(), true, "legend checkbox checked when includeLegend is set to true.");
+            t.eq(printPreview.items.get(1).items.get(0).items.get(0).getXType(), "container", "textfield line created correctly with legend checkbox.");
+            t.eq(printPreview.items.get(1).items.get(0).items.get(0).items.get(1).getValue(), true, "legend checkbox checked when includeLegend is set to true.");
             printPreview.destroy();
             
             mapPanel.destroy();
