@@ -35,7 +35,7 @@ Ext.onReady(function() {
         region: "west",
         defaults: {
             style: "padding:5px",
-            imageFormat: "image/png"
+            baseParams: {FORMAT: "image/png"}
         }
     });
     new Ext.Panel({
