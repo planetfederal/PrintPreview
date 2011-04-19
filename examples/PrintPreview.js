@@ -64,7 +64,7 @@ function showPrintWindow() {
                 map: {controls: [
                     new OpenLayers.Control.Navigation({
                         zoomBoxEnabled: false,
-                        zoomWheelEnabled: false,
+                        zoomWheelEnabled: false
                     }),
                     new OpenLayers.Control.PanPanel()
                 ]}
